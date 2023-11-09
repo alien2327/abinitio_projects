@@ -1,0 +1,560 @@
+
+  ___ ___ ___ _ _ _  
+ |   |   |_  | | | | 
+ | | | | | . | | | | 
+ |__ |  _|___|_____|  23.9.1
+ |___|_|             
+
+User:   ???@287f1c874699
+Date:   Thu Nov  9 15:56:26 2023
+Arch:   x86_64
+Pid:    124714
+CWD:    /workdir/abinitio_projects/projects/YCaCr2O3
+Python: 3.11.6
+gpaw:   /usr/lib/python3.11/site-packages/gpaw
+_gpaw:  /usr/lib/python3.11/site-packages/_gpaw.cpython-311-x86_64-linux-gnu.so
+ase:    /usr/lib/python3.11/site-packages/ase (version 3.22.1)
+numpy:  /usr/lib/python3.11/site-packages/numpy (version 1.26.1)
+scipy:  /usr/lib/python3.11/site-packages/scipy (version 1.11.3)
+libxc:  7.0.0
+units:  Angstrom and eV
+cores: 16
+OpenMP: True
+OMP_NUM_THREADS: 4
+
+Input parameters:
+  basis: dzp
+  convergence: {bands: occupied}
+  hund: True
+  kpts: [3 3 3]
+  maxiter: 1000
+  mode: lcao
+  occupations: {name: fermi-dirac,
+                width: 0.0}
+  setups: {Cr: :d,3.7}
+  spinpol: True
+
+System changes: positions, numbers, cell, pbc, initial_charges, initial_magmoms 
+
+Initialize ...
+
+species:
+  Ca:
+    name: Calcium
+    id: 1e9b3708eeddc97ff265e414fde41b00
+    Z: 20.0
+    valence: 10
+    core: 10
+    charge: 0.0
+    file: /usr/share/gpaw-setups/Ca.LDA.gz
+    compensation charges: {type: gauss,
+                           rc: 0.37,
+                           lmax: 2}
+    cutoffs: {filter: 2.10,
+              core: 1.17}
+    valence states:
+      #              energy  rcut
+      - 3s(2.00)   -46.826   1.175
+      - 4s(2.00)    -3.864   1.175
+      - 3p(6.00)   -27.986   1.154
+      -  p          -0.774   1.154
+      -  d           0.000   0.937
+  
+    # LCAO basis set for Ca:
+    #   Name: dzp
+    #   File: /usr/share/gpaw-setups/Ca.dzp.basis.gz
+    #   Number of radial functions: 11
+    #   Number of spherical harmonics: 29
+    #     l=0, rc=3.8906 Bohr: 3s-sz confined orbital
+    #     l=0, rc=10.7812 Bohr: 4s-sz confined orbital
+    #     l=1, rc=4.4531 Bohr: 3p-sz confined orbital
+    #     l=1, rc=13.9219 Bohr: 4p-sz confined orbital
+    #     l=2, rc=8.8594 Bohr: 3d-sz confined orbital
+    #     l=0, rc=2.2188 Bohr: 3s-dz split-valence wave
+    #     l=0, rc=6.6719 Bohr: 4s-dz split-valence wave
+    #     l=1, rc=2.6406 Bohr: 3p-dz split-valence wave
+    #     l=1, rc=8.6719 Bohr: 4p-dz split-valence wave
+    #     l=2, rc=5.1250 Bohr: 3d-dz split-valence wave
+    #     l=1, rc=10.7812 Bohr: p-type Gaussian polarization
+    #   Number of RI-basis functions 0
+
+  Y:
+    name: Yttrium
+    id: e19a475b10ce94e57b610f4f6dcf97f6
+    Z: 39.0
+    valence: 11
+    core: 28
+    charge: 0.0
+    file: /usr/share/gpaw-setups/Y.LDA.gz
+    compensation charges: {type: gauss,
+                           rc: 0.40,
+                           lmax: 2}
+    cutoffs: {filter: 2.39,
+              core: 1.70}
+    valence states:
+      #              energy  rcut
+      - 4s(2.00)   -47.976   1.328
+      - 5s(2.00)    -4.228   1.328
+      - 4p(6.00)   -27.951   1.318
+      - 5p(0.00)    -1.496   1.318
+      - 4d(1.00)    -2.645   1.286
+      -  d          24.567   1.286
+  
+    # LCAO basis set for Y:
+    #   Name: dzp
+    #   File: /usr/share/gpaw-setups/Y.dzp.basis.gz
+    #   Number of radial functions: 11
+    #   Number of spherical harmonics: 29
+    #     l=0, rc=4.0469 Bohr: 4s-sz confined orbital
+    #     l=0, rc=10.5938 Bohr: 5s-sz confined orbital
+    #     l=1, rc=4.7344 Bohr: 4p-sz confined orbital
+    #     l=1, rc=13.8750 Bohr: 5p-sz confined orbital
+    #     l=2, rc=8.9531 Bohr: 4d-sz confined orbital
+    #     l=0, rc=2.3750 Bohr: 4s-dz split-valence wave
+    #     l=0, rc=6.5469 Bohr: 5s-dz split-valence wave
+    #     l=1, rc=2.8438 Bohr: 4p-dz split-valence wave
+    #     l=1, rc=8.7031 Bohr: 5p-dz split-valence wave
+    #     l=2, rc=5.2656 Bohr: 4d-dz split-valence wave
+    #     l=1, rc=10.5938 Bohr: p-type Gaussian polarization
+    #   Number of RI-basis functions 0
+
+  Cr:
+    name: Chromium
+    id: 444e8044bc0f91048286c984738d87f5
+    Z: 24.0
+    valence: 6
+    core: 18
+    charge: 0.0
+    Hubbard: {U: 3.7,  # eV
+              l: 2,
+              scale: True}
+    file: /usr/share/gpaw-setups/Cr.LDA.gz
+    compensation charges: {type: gauss,
+                           rc: 0.35,
+                           lmax: 2}
+    cutoffs: {filter: 2.14,
+              core: 3.04}
+    valence states:
+      #              energy  rcut
+      - 4s(1.00)    -4.191   1.164
+      - 4p(0.00)    -1.079   1.217
+      - 3d(5.00)    -3.128   1.111
+      -  s          23.021   1.164
+      -  p          26.132   1.217
+      -  d          24.083   1.111
+  
+    # LCAO basis set for Cr:
+    #   Name: dzp
+    #   File: /usr/share/gpaw-setups/Cr.dzp.basis.gz
+    #   Number of radial functions: 5
+    #   Number of spherical harmonics: 15
+    #     l=0, rc=9.8906 Bohr: 4s-sz confined orbital
+    #     l=2, rc=6.6406 Bohr: 3d-sz confined orbital
+    #     l=0, rc=5.9219 Bohr: 4s-dz split-valence wave
+    #     l=2, rc=3.8906 Bohr: 3d-dz split-valence wave
+    #     l=1, rc=9.8906 Bohr: p-type Gaussian polarization
+    #   Number of RI-basis functions 0
+
+  O:
+    name: Oxygen
+    id: 9b9d51c344dea68c822856295a461509
+    Z: 8.0
+    valence: 6
+    core: 2
+    charge: 0.0
+    file: /usr/share/gpaw-setups/O.LDA.gz
+    compensation charges: {type: gauss,
+                           rc: 0.21,
+                           lmax: 2}
+    cutoffs: {filter: 1.17,
+              core: 0.83}
+    valence states:
+      #              energy  rcut
+      - 2s(2.00)   -23.752   0.688
+      - 2p(4.00)    -9.195   0.598
+      -  s           3.459   0.688
+      -  p          18.016   0.598
+      -  d           0.000   0.619
+  
+    # LCAO basis set for O:
+    #   Name: dzp
+    #   File: /usr/share/gpaw-setups/O.dzp.basis.gz
+    #   Number of radial functions: 5
+    #   Number of spherical harmonics: 13
+    #     l=0, rc=4.3438 Bohr: 2s-sz confined orbital
+    #     l=1, rc=5.3906 Bohr: 2p-sz confined orbital
+    #     l=0, rc=2.2969 Bohr: 2s-dz split-valence wave
+    #     l=1, rc=2.8906 Bohr: 2p-dz split-valence wave
+    #     l=2, rc=5.3906 Bohr: d-type Gaussian polarization
+    #   Number of RI-basis functions 0
+
+Reference energy: -359350.228822  # eV
+
+Spin-polarized calculation.
+Magnetic moment: 50.000000
+
+Convergence criteria:
+ Maximum [total energy] change in last 3 cyles: 0.0005 eV / valence electron
+ Maximum integral of absolute [dens]ity change: 0.0001 electrons / valence electron
+ Maximum integral of absolute [eigenst]ate change: 4e-08 eV^2 / valence electron
+ Maximum number of scf [iter]ations: 1000
+ (Square brackets indicate name in SCF output, whereas a 'c' in
+ the SCF output indicates the quantity has converged.)
+
+Symmetries present (total): 1
+
+  ( 1  0  0)
+  ( 0  1  0)
+  ( 0  0  1)
+
+27 k-points: 3 x 3 x 3 Monkhorst-Pack grid
+14 k-points in the irreducible part of the Brillouin zone
+       k-points in crystal coordinates                weights
+   0:     0.00000000    0.00000000    0.00000000          1/27
+   1:     0.00000000    0.00000000    0.33333333          2/27
+   2:     0.00000000    0.33333333   -0.33333333          2/27
+   3:     0.00000000    0.33333333    0.00000000          2/27
+   4:     0.00000000    0.33333333    0.33333333          2/27
+   5:     0.33333333   -0.33333333   -0.33333333          2/27
+   6:     0.33333333   -0.33333333    0.00000000          2/27
+   7:     0.33333333   -0.33333333    0.33333333          2/27
+   8:     0.33333333    0.00000000   -0.33333333          2/27
+   9:     0.33333333    0.00000000    0.00000000          2/27
+          ...
+  13:     0.33333333    0.33333333    0.33333333          2/27
+
+Wave functions: LCAO
+  Diagonalizer: BLACS / Elpa two-stage solver, 2 x 1 grid with 32 x 32 blocksize
+  Atomic Correction: sparse using scipy
+  Data-type: complex
+ 
+
+Occupation numbers: # Zero width 
+
+Eigensolver
+   LCAO using direct dense diagonalizer 
+
+Densities:
+  Coarse grid: 28*28*40 grid
+  Fine grid: 56*56*80 grid
+  Total Charge: 0.000000 
+
+Density mixing:
+  Method: difference
+  Backend: pulay
+  Linear mixing parameter: 0.05
+  old densities: 5
+  Damping of long wavelength oscillations: 50 
+
+Hamiltonian:
+  XC and Coulomb potentials evaluated on a 56*56*80 grid
+  Using the LDA Exchange-Correlation functional
+  Interpolation: tri-quintic (5. degree polynomial)
+  Poisson solver: FastPoissonSolver using
+    Stencil: 6*3+1=19 point O(h^6) finite-difference Laplacian
+    FFT axes: [0, 1, 2]
+    FST axes: []
+ 
+
+Memory estimate:
+  Process memory now: 225.26 MiB
+  Calculator: 47.88 MiB
+    Density: 5.81 MiB
+      Arrays: 0.84 MiB
+      Localized functions: 3.29 MiB
+      Mixer: 1.67 MiB
+    Hamiltonian: 0.83 MiB
+      Arrays: 0.60 MiB
+      XC: 0.00 MiB
+      Poisson: 0.00 MiB
+      vbar: 0.23 MiB
+    Wavefunctions: 41.25 MiB
+      C [qnM]: 0.59 MiB
+      S, T [2 x qmm]: 1.74 MiB
+      P [aqMi]: 0.05 MiB
+      BasisFunctions: 38.87 MiB
+      Eigensolver: 0.00 MiB
+
+Total number of cores used: 16
+Parallelization over k-points: 8
+Domain decomposition: 1 x 1 x 2
+                      2 x 2 x 4 (fine grid)
+OpenMP threads: 4
+
+Number of atoms: 20
+Number of atomic orbitals: 332
+Number of bands in calculation: 117
+Number of valence electrons: 138
+Bands to converge: occupied
+
+... initialized
+
+Initializing position-dependent things.
+
+Density initialized from atomic densities
+    .------------.  
+   /|  O         |  
+  / Ca           |  
+ *  O            |  
+ |  |    Ca   O  |  
+ |  |  O O       |  
+ | CO         O  |  
+ |  |    O O     |  
+ |  O  CrY       |  
+ |  .---------O--.  
+ | Cr         Y /   
+ |/        O   /    
+ *-----Cr-----*     
+
+Positions:
+   0 Ca     0.100491    5.236549    5.750250    ( 0.0000,  0.0000,  0.0000)
+   1 Ca     2.558009    2.429049    5.750250    ( 0.0000,  0.0000,  0.0000)
+   2 Y      2.758991    3.185951    1.916750    ( 0.0000,  0.0000,  1.0000)
+   3 Y      5.216509    0.378451    1.916750    ( 0.0000,  0.0000,  1.0000)
+   4 Cr     0.000000    2.807500    0.000000    ( 0.0000,  0.0000,  6.0000)
+   5 Cr     0.000000    2.807500    3.833500    ( 0.0000,  0.0000,  6.0000)
+   6 Cr     2.658500    0.000000    3.833500    ( 0.0000,  0.0000,  6.0000)
+   7 Cr     2.658500    5.615000    0.000000    ( 0.0000,  0.0000,  6.0000)
+   8 O      0.594972    2.577847    1.916750    ( 0.0000,  0.0000,  2.0000)
+   9 O      1.026181    1.109524    4.273586    ( 0.0000,  0.0000,  2.0000)
+  10 O      1.026181    1.109524    7.226914    ( 0.0000,  0.0000,  2.0000)
+  11 O      1.632319    3.917024    7.226914    ( 0.0000,  0.0000,  2.0000)
+  12 O      1.632319    3.917024    4.273586    ( 0.0000,  0.0000,  2.0000)
+  13 O      2.063528    5.385346    1.916750    ( 0.0000,  0.0000,  2.0000)
+  14 O      3.253472    0.229654    5.750250    ( 0.0000,  0.0000,  2.0000)
+  15 O      3.684681    1.697976    3.393414    ( 0.0000,  0.0000,  2.0000)
+  16 O      3.684681    1.697976    0.440086    ( 0.0000,  0.0000,  2.0000)
+  17 O      4.290819    4.505476    0.440086    ( 0.0000,  0.0000,  2.0000)
+  18 O      4.290819    4.505476    3.393414    ( 0.0000,  0.0000,  2.0000)
+  19 O      4.722028    3.037154    5.750250    ( 0.0000,  0.0000,  2.0000)
+
+Unit cell:
+           periodic     x           y           z      points  spacing
+  1. axis:    yes    5.317000    0.000000    0.000000    28     0.1899
+  2. axis:    yes    0.000000    5.615000    0.000000    28     0.2005
+  3. axis:    yes    0.000000    0.000000    7.667000    40     0.1917
+
+  Lengths:   5.317000   5.615000   7.667000
+  Angles:   90.000000  90.000000  90.000000
+
+Effective grid spacing dv^(1/3) = 0.1940
+
+     iter     time        total  log10-change:  magmom
+                         energy  eigst   dens
+iter:   1 15:56:49  -154.663048       c          +49.6734
+iter:   2 15:57:19  -181.427343       c -0.94    +21.9020
+iter:   3 15:57:48  -179.816819       c -0.97    +9.2337
+iter:   4 15:58:18  -179.125859       c -1.03    +10.5743
+iter:   5 15:58:48  -184.896542       c -1.06    +10.4861
+iter:   6 15:59:17  -177.262012       c -1.01    +11.2960
+iter:   7 15:59:47  -170.224197       c -1.10    +10.9857
+iter:   8 16:00:17  -165.214516       c -1.23    +10.9914
+iter:   9 16:00:47  -163.542803       c -1.38    +10.1913
+iter:  10 16:01:17  -163.481512       c -1.54    +10.0964
+iter:  11 16:01:46  -163.807126       c -1.64    +10.0120
+iter:  12 16:02:16  -163.637604       c -1.80    +10.0217
+iter:  13 16:02:45  -163.707722       c -1.84    +10.0101
+iter:  14 16:03:15  -163.631404       c -1.87    +9.9987
+iter:  15 16:03:45  -163.721539       c -1.99    +10.0015
+iter:  16 16:04:16  -163.773227       c -2.00    +9.9990
+iter:  17 16:04:45  -163.844535       c -2.08    +9.9995
+iter:  18 16:05:15  -163.871049       c -2.12    +9.9997
+iter:  19 16:05:45  -163.930308       c -2.20    +9.9999
+iter:  20 16:06:15  -163.884418c      c -2.28    +10.0001
+iter:  21 16:06:44  -164.017011       c -2.33    +10.0000
+iter:  22 16:07:15  -163.906522       c -2.29    +10.0000
+iter:  23 16:07:44  -163.717307       c -2.42    +10.0000
+iter:  24 16:08:14  -164.124217       c -2.23    +10.0000
+iter:  25 16:08:45  -164.048108       c -2.17    +10.0001
+iter:  26 16:09:15  -164.182843       c -2.05    +10.0001
+iter:  27 16:09:44  -164.206383       c -2.10    +10.0001
+iter:  28 16:10:14  -164.232649c      c -2.06    +10.0001
+iter:  29 16:10:44  -164.263767c      c -1.97    +10.0001
+iter:  30 16:11:14  -164.259607c      c -1.92    +10.0001
+iter:  31 16:11:44  -164.041791       c -1.91    +10.0001
+iter:  32 16:12:13  -164.013956       c -2.07    +10.0001
+iter:  33 16:12:43  -164.076497c      c -2.09    +10.0001
+iter:  34 16:13:12  -163.962549       c -2.16    +10.0001
+iter:  35 16:13:42  -164.088631       c -2.19    +10.0001
+iter:  36 16:14:12  -164.017239       c -2.23    +10.0001
+iter:  37 16:14:42  -164.059564       c -2.49    +10.0000
+iter:  38 16:15:11  -164.128293       c -2.50    +10.0000
+iter:  39 16:15:41  -164.193492       c -2.35    +10.0000
+iter:  40 16:16:10  -164.129368c      c -2.23    +10.0000
+iter:  41 16:16:40  -164.109957       c -2.29    +10.0000
+iter:  42 16:17:10  -164.141732c      c -2.31    +10.0000
+iter:  43 16:17:40  -164.105388c      c -2.29    +10.0000
+iter:  44 16:18:09  -164.077637c      c -2.31    +10.0000
+iter:  45 16:18:39  -164.067668c      c -2.46    +10.0000
+iter:  46 16:19:09  -164.086747c      c -2.55    +10.0000
+iter:  47 16:19:38  -164.106251c      c -2.79    +10.0000
+iter:  48 16:20:08  -164.101433c      c -2.61    +10.0000
+iter:  49 16:20:38  -164.107330c      c -2.70    +10.0000
+iter:  50 16:21:08  -164.130596c      c -2.74    +10.0000
+iter:  51 16:21:37  -164.112702c      c -2.46    +10.0000
+iter:  52 16:22:07  -164.144161c      c -2.64    +10.0000
+iter:  53 16:22:37  -164.106607c      c -2.38    +10.0000
+iter:  54 16:23:07  -164.104386c      c -2.67    +10.0000
+iter:  55 16:23:37  -164.101490c      c -2.69    +10.0000
+iter:  56 16:24:06  -164.100558c      c -2.78    +10.0000
+iter:  57 16:24:36  -164.103150c      c -2.89    +10.0000
+iter:  58 16:25:06  -164.104056c      c -2.92    +10.0000
+iter:  59 16:25:35  -164.104811c      c -2.86    +10.0000
+iter:  60 16:26:05  -164.103971c      c -2.76    +10.0000
+iter:  61 16:26:35  -164.108060c      c -2.86    +10.0000
+iter:  62 16:27:05  -164.105403c      c -2.64    +10.0000
+iter:  63 16:27:34  -164.104898c      c -2.78    +10.0000
+iter:  64 16:28:04  -164.103136c      c -2.82    +10.0000
+iter:  65 16:28:34  -164.103441c      c -2.96    +10.0000
+iter:  66 16:29:04  -164.104264c      c -2.95    +10.0000
+iter:  67 16:29:34  -164.104393c      c -2.87    +10.0000
+iter:  68 16:30:03  -164.103467c      c -2.88    +10.0000
+iter:  69 16:30:33  -164.102149c      c -2.90    +10.0000
+iter:  70 16:31:03  -164.102484c      c -2.97    +10.0000
+iter:  71 16:31:33  -164.101610c      c -2.98    +10.0000
+iter:  72 16:32:03  -164.101304c      c -3.15    +10.0000
+iter:  73 16:32:32  -164.102624c      c -3.23    +10.0000
+iter:  74 16:33:02  -164.103932c      c -3.32    +10.0000
+iter:  75 16:33:32  -164.104613c      c -3.05    +10.0000
+iter:  76 16:34:03  -164.105992c      c -3.01    +10.0000
+iter:  77 16:34:32  -164.105062c      c -2.92    +10.0000
+iter:  78 16:35:03  -164.105482c      c -2.86    +10.0000
+iter:  79 16:35:33  -164.102476c      c -2.86    +10.0000
+iter:  80 16:36:02  -164.107560c      c -2.87    +10.0000
+iter:  81 16:36:32  -164.106183c      c -2.70    +10.0000
+iter:  82 16:37:02  -164.108202c      c -2.72    +10.0000
+iter:  83 16:37:31  -164.108545c      c -2.60    +10.0000
+iter:  84 16:38:01  -164.104914c      c -2.65    +10.0000
+iter:  85 16:38:31  -164.113997c      c -2.71    +10.0000
+iter:  86 16:39:00  -164.121235c      c -2.53    +10.0000
+iter:  87 16:39:30  -164.111598c      c -2.51    +10.0000
+iter:  88 16:40:00  -164.096096c      c -2.56    +10.0000
+iter:  89 16:40:30  -164.096842c      c -2.79    +10.0000
+iter:  90 16:40:59  -164.101200c      c -2.99    +10.0000
+iter:  91 16:41:29  -164.110323c      c -3.05    +10.0000
+iter:  92 16:41:59  -164.112966c      c -2.69    +10.0000
+iter:  93 16:42:29  -164.125665c      c -2.63    +10.0000
+iter:  94 16:42:59  -164.128752c      c -2.37    +10.0000
+iter:  95 16:43:29  -164.129866c      c -2.34    +10.0000
+iter:  96 16:43:58  -164.139518c      c -2.28    +10.0000
+iter:  97 16:44:28  -164.157720c      c -2.27    +10.0000
+iter:  98 16:44:58  -164.107228c      c -2.18    +10.0000
+iter:  99 16:45:28  -164.091666c      c -2.42    +10.0000
+iter: 100 16:45:57  -164.086453c      c -2.46    +10.0000
+iter: 101 16:46:27  -164.099171c      c -2.64    +10.0000
+iter: 102 16:46:57  -164.081977c      c -2.55    +10.0000
+iter: 103 16:47:27  -164.077121c      c -2.77    +10.0001
+iter: 104 16:47:57  -164.096581c      c -2.89    +10.0000
+iter: 105 16:48:27  -164.080458c      c -2.52    +10.0001
+iter: 106 16:48:57  -164.010850       c -2.58    +10.0000
+iter: 107 16:49:27  -164.116339       c -2.05    +10.0000
+iter: 108 16:49:56  -164.140674       c -2.50    +10.0000
+iter: 109 16:50:26  -164.179977c      c -2.36    +10.0000
+iter: 110 16:50:56  -164.180777c      c -2.17    +10.0000
+iter: 111 16:51:26  -164.187163c      c -2.17    +10.0000
+iter: 112 16:51:55  -164.199194c      c -2.14    +10.0000
+iter: 113 16:52:25  -164.205268c      c -2.10    +10.0000
+iter: 114 16:52:55  -164.176132c      c -2.05    +10.0000
+iter: 115 16:53:24  -164.167415c      c -2.06    +10.0000
+iter: 116 16:53:54  -164.144193c      c -2.08    +10.0000
+iter: 117 16:54:24  -164.138355c      c -2.13    +10.0000
+iter: 118 16:54:53  -164.166661c      c -2.08    +10.0000
+iter: 119 16:55:23  -164.074946       c -2.04    +10.0000
+iter: 120 16:55:54  -164.039508       c -2.09    +10.0000
+iter: 121 16:56:23  -164.047675c      c -2.13    +10.0000
+iter: 122 16:56:53  -164.155406       c -2.30    +10.0000
+iter: 123 16:57:23  -164.091108       c -2.13    +10.0000
+iter: 124 16:57:53  -164.107574c      c -2.37    +10.0000
+iter: 125 16:58:23  -164.142496c      c -2.52    +10.0000
+iter: 126 16:58:53  -164.143234c      c -2.30    +10.0000
+iter: 127 16:59:23  -164.142590c      c -2.32    +10.0000
+iter: 128 16:59:53  -164.157604c      c -2.27    +10.0000
+iter: 129 17:00:22  -164.118548c      c -2.17    +10.0000
+iter: 130 17:00:52  -164.102906c      c -2.33    +10.0000
+iter: 131 17:01:22  -164.097909c      c -2.44    +10.0000
+iter: 132 17:01:52  -164.087104c      c -2.45    +10.0000
+iter: 133 17:02:22  -164.082425c      c -2.73    +10.0000
+iter: 134 17:02:51  -164.092156c      c -2.78    +10.0000
+iter: 135 17:03:21  -164.072040c      c -2.72    +10.0000
+iter: 136 17:03:50  -164.145709       c -2.78    +10.0000
+iter: 137 17:04:20  -164.218584       c -2.24    +10.0000
+iter: 138 17:04:50  -164.147384       c -2.10    +10.0000
+iter: 139 17:05:20  -164.189362       c -2.27    +10.0000
+iter: 140 17:05:50  -164.251039       c -2.18    +10.0000
+iter: 141 17:06:20  -164.201950c      c -2.02    +10.0000
+iter: 142 17:06:50  -164.185162c      c -2.08    +10.0000
+iter: 143 17:07:20  -164.202011c      c -2.12    +10.0000
+iter: 144 17:07:50  -164.293191       c -2.12    +10.0000
+iter: 145 17:08:20  -164.078338       c -1.99    +10.0000
+iter: 146 17:08:49  -164.008917       c -2.11    +10.0000
+iter: 147 17:09:19  -164.063325       c -2.47    +10.0000
+iter: 148 17:09:49  -164.085749       c -2.54    +10.0000
+iter: 149 17:10:19  -164.124315c      c -2.54    +10.0000
+iter: 150 17:10:49  -164.156524       c -2.57    +10.0001
+iter: 151 17:11:19  -164.155887c      c -2.40    +10.0001
+iter: 152 17:11:49  -164.129030c      c -2.34    +10.0001
+iter: 153 17:12:19  -164.121179c      c -2.42    +10.0000
+iter: 154 17:12:49  -164.130325c      c -2.42    +10.0000
+iter: 155 17:13:18  -164.113274c      c -2.36    +10.0000
+iter: 156 17:13:48  -164.102613c      c -2.36    +10.0000
+iter: 157 17:14:18  -164.105492c      c -2.46    +10.0000
+iter: 158 17:14:48  -164.104657c      c -2.39    +10.0000
+iter: 159 17:15:18  -164.178455       c -2.43    +10.0000
+iter: 160 17:15:48  -164.186987       c -2.17    +10.0000
+iter: 161 17:16:17  -164.162786c      c -2.21    +10.0000
+iter: 162 17:16:47  -164.215218c      c -2.16    +10.0000
+iter: 163 17:17:17  -164.189542c      c -2.12    +10.0000
+iter: 164 17:17:47  -164.175401c      c -2.09    +10.0000
+iter: 165 17:18:17  -164.168633c      c -2.06    +10.0000
+iter: 166 17:18:46  -164.075050       c -2.07    +10.0000
+iter: 167 17:19:16  -164.034176       c -2.18    +10.0000
+iter: 168 17:19:46  -164.041653c      c -2.32    +10.0000
+iter: 169 17:20:16  -164.093765c      c -2.35    +10.0000
+iter: 170 17:20:46  -164.118830       c -2.31    +10.0000
+iter: 171 17:21:16  -164.145987c      c -2.46    +10.0000
+iter: 172 17:21:45  -164.163170c      c -2.32    +10.0000
+iter: 173 17:22:15  -164.145635c      c -2.23    +10.0000
+iter: 174 17:22:45  -164.170425c      c -2.30    +10.0000
+iter: 175 17:23:15  -164.171333c      c -2.19    +10.0000
+iter: 176 17:23:45  -164.163869c      c -2.14    +10.0000
+iter: 177 17:24:15  -164.163678c      c -2.11    +10.0000
+iter: 178 17:24:45  -164.199147c      c -2.10    +10.0000
+iter: 179 17:25:14  -164.219915c      c -2.06    +10.0000
+iter: 180 17:25:44  -164.158142c      c -2.01    +10.0000
+iter: 181 17:26:13  -164.064622       c -2.04    +10.0000
+iter: 182 17:26:44  -164.082489       c -2.22    +10.0000
+iter: 183 17:27:14  -164.040749c      c -2.22    +10.0000
+iter: 184 17:27:44  -164.060195c      c -2.51    +10.0000
+iter: 185 17:28:13  -164.112468       c -2.50    +10.0000
+iter: 186 17:28:43  -164.180452       c -2.37    +10.0000
+iter: 187 17:29:13  -164.236333       c -2.19    +10.0000
+iter: 188 17:29:42  -164.189061c      c -2.10    +10.0000
+iter: 189 17:30:12  -164.153446       c -2.14    +10.0000
+iter: 190 17:30:41  -164.120301c      c -2.22    +10.0000
+iter: 191 17:31:12  -164.082616       c -2.30    +10.0000
+iter: 192 17:31:41  -164.055191c      c -2.45    +10.0000
+iter: 193 17:32:11  -164.043102c      c -2.57    +10.0000
+iter: 194 17:32:41  -164.084166c      c -2.66    +10.0000
+iter: 195 17:33:11  -164.080687c      c -2.44    +10.0001
+iter: 196 17:33:41  -164.123246c      c -2.10    +10.0000
+iter: 197 17:34:11  -164.133478c      c -2.35    +10.0000
+iter: 198 17:34:41  -164.220064       c -2.34    +10.0000
+iter: 199 17:35:11  -164.103742       c -2.10    +10.0000
+iter: 200 17:35:41  -164.110228       c -2.53    +10.0000
+iter: 201 17:36:11  -164.102445c      c -2.50    +10.0000
+iter: 202 17:36:41  -164.109641c      c -2.65    +10.0000
+iter: 203 17:37:10  -164.136786c      c -2.63    +10.0000
+iter: 204 17:37:40  -164.117838c      c -2.32    +10.0000
+iter: 205 17:38:10  -164.128972c      c -2.48    +10.0000
+iter: 206 17:38:39  -164.118900c      c -2.40    +10.0000
+iter: 207 17:39:10  -164.116214c      c -2.45    +10.0000
+iter: 208 17:39:39  -164.101335c      c -2.49    +10.0000
+iter: 209 17:40:09  -164.099103c      c -2.65    +10.0000
+iter: 210 17:40:39  -164.097158c      c -2.74    +10.0000
+iter: 211 17:41:09  -164.096260c      c -2.85    +10.0000
+iter: 212 17:41:39  -164.099344c      c -2.91    +10.0000
+iter: 213 17:42:08  -164.107477c      c -3.08    +10.0000
+iter: 214 17:42:38  -164.105466c      c -2.77    +10.0000
+iter: 215 17:43:07  -164.108669c      c -2.93    +10.0000
+iter: 216 17:43:37  -164.106256c      c -2.79    +10.0000
+iter: 217 17:44:07  -164.104864c      c -2.72    +10.0001
